@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eb4034">
+    <meta property="og:type" content="Website">
+    <meta property="og:url" content="https://pizzaboxer.xyz">
+    <meta property="og:site_name" content="pizzaboxer.xyz">
+    <meta property="og:image" content="https://pizzaboxer.xyz/img/icon.png">
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="@(ViewData["Description"] ?? "hi")">
+    <link rel="icon" type="image/png" href="/img/icon-circle.png" />
+    <title>@ViewData["Title"] - pizzaboxer.xyz</title>
+    <link rel="stylesheet" href="~/css/dist/site.css" asp-append-version="true" />
+    <script>
+        // image preloading - thanks kjf :D
+
+        window.onload = function () {
+            document.getElementById("bg_image").classList.toggle('bg-hidden');
+        }
+    </script>
+</head>
+<body class="bg-neutral-900 text-white font-mono">
+	<div id="bg_image" class="fixed -z-10 w-full h-screen bg-cover bg-center bg-no-repeat bg-hidden">
+		<!-- used for preloading -->
+		<img src="/img/back.png" width="0">
+	</div>
+	<div class="container mx-auto">
+        @RenderBody()
+	</div>
+    <script src="~/js/dist/site.js" asp-append-version="true"></script>
+</body>
+</html>

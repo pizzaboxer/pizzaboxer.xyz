@@ -1,0 +1,24 @@
+{
+  "name": "personalwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css:build": "npx tailwind build -i ./wwwroot/css/src/site.css -o ./wwwroot/css/dist/site.css",
+    "js:build": "npx webpack --config webpack.config.js --mode=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "tailwindcss": "^3.1.8",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "alpinejs": "^3.10.3",
+    "flowbite": "^1.5.3"
+  }
+}

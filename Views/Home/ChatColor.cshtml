@@ -1,0 +1,58 @@
+﻿@{
+	ViewData["Title"] = "roblox chat color calculator";
+	ViewData["Description"] = "calculates your roblox chat color based on your username";
+}
+
+<div class="flex h-screen">
+	<div class="max-w-md my-auto">
+		<div class="p-4 mb-4">
+			<h1 class="text-2xl underline">roblox chat color calculator</h1>
+			<p>calculates your roblox chat color based on your username</p>
+			<input id="input_name" type="text" onkeyup="computeChatColor()" class="bg-neutral-800 border-white placeholder-gray-400 text-white text-sm rounded focus:border-blue-500 w-full px-2 py-1 mt-3" placeholder="enter your username">
+			<p id="result" class="mt-3" style="display:none"></p>
+		</div>
+	</div>
+</div>
+<script>
+	// https://github.com/Roblox/Core-Scripts/blob/master/CoreScriptsRoot/Modules/Chat.lua#L302
+	// lua code adapted into javascript and some slight modifications
+
+	var chatColors = [
+		{ "Hex": "#C4281C", "BrickColor": "Bright red" },
+		{ "Hex": "#0D69AC", "BrickColor": "Bright blue" },
+		{ "Hex": "#27462D", "BrickColor": "Earth green" },
+		{ "Hex": "#6B327C", "BrickColor": "Bright violet" },
+		{ "Hex": "#DA8541", "BrickColor": "Bright orange" },
+		{ "Hex": "#F5CD30", "BrickColor": "Bright yellow" },
+		{ "Hex": "#E8BAC8", "BrickColor": "Light reddish violet" },
+		{ "Hex": "#D7C59A", "BrickColor": "Brick yellow" }
+	];
+
+	function getNameValue(pName) {
+		var value = 0;
+		for (index = 1; index <= pName.length; index++) {
+			var cValue = pName.charCodeAt(index - 1);
+			var reverseIndex = pName.length - index + 1;
+			if (pName.length % 2 == 1) reverseIndex = reverseIndex - 1;
+			if (reverseIndex % 4 >= 2) cValue = -cValue;
+			value = value + cValue;
+		}
+		while (value < 0) value += 8;
+		return value % 8;
+	}
+
+	function computeChatColor() {
+		var pName = document.getElementById("input_name").value;
+		var result = document.getElementById("result");
+
+		if (!pName.length) {
+			result.style.display = "none";
+			result.innerHTML = "";
+			return;
+		}
+
+		chatcolor = chatColors[getNameValue(pName)];
+		result.style.display = "revert";
+		result.innerHTML = `your color is <span style='color:${chatcolor["Hex"]}'>${chatcolor["BrickColor"]}</span>`;
+	}
+</script>
