@@ -26,11 +26,6 @@ namespace PersonalWebsite.Controllers
             return View();
         }
 
-        public IActionResult ChatColor()
-        {
-            return View();
-        }
-
         public IActionResult LOL(string bruh)
         {
             if (bruh != "moment")

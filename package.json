@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css:build": "npx tailwind build -i ./wwwroot/css/src/site.css -o ./wwwroot/css/dist/site.css",
-    "js:build": "npx webpack --config webpack.config.js --mode=production"
+    "css:build": "npx tailwindcss -i ./wwwroot/css/src/site.css -o ./wwwroot/css/dist/site.css",
+    "js:build:debug": "npx webpack --config webpack.config.js --mode=development",
+    "js:build:release": "npx webpack --config webpack.config.js --mode=production"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +19,6 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "alpinejs": "^3.10.3",
     "flowbite": "^1.5.3"
   }
 }

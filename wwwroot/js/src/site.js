@@ -4,8 +4,9 @@
 // Write your JavaScript code.
 
 import 'flowbite';
-// import Alpine from 'alpinejs';
 
-// window.Alpine = Alpine;
+// image preloading - thanks kjf :D
 
-// Alpine.start();
+window.onload = function () {
+    document.getElementById("bg_image").classList.toggle('bg-hidden');
+}

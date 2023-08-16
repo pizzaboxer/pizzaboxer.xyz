@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.HttpOverrides;
+
 namespace PersonalWebsite
 {
     public class Program
@@ -17,13 +19,16 @@ namespace PersonalWebsite
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor
+            });
+
             app.UseStatusCodePagesWithReExecute("/Status/Http{0}");
 
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
 
             /* app.MapControllerRoute(
                 name: "default",

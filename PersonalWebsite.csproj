@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="IPNetwork2" Version="2.6.601" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.9" />
     <PackageReference Include="OpenGraph-Net" Version="4.0.1" />
   </ItemGroup>
@@ -22,7 +23,8 @@
   </Target>
 
   <Target Name="Webpack" BeforeTargets="Build">
-    <Exec Command="npm run js:build" />
+    <Exec Command="npm run js:build:debug" Condition="'$(Configuration)' == 'Debug'" />
+    <Exec Command="npm run js:build:release" Condition="'$(Configuration)' == 'Release'" />
   </Target>
 
 </Project>
