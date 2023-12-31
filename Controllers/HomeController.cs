@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PersonalWebsite.Models;
 using System.Diagnostics;
-using System.IO;
 
 namespace PersonalWebsite.Controllers
 {
@@ -23,14 +22,6 @@ namespace PersonalWebsite.Controllers
 
         public IActionResult About()
         {
-            return View();
-        }
-
-        public IActionResult LOL(string bruh)
-        {
-            if (bruh != "moment")
-                return NotFound();
-
             return View();
         }
 
