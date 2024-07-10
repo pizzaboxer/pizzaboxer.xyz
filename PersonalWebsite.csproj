@@ -11,11 +11,6 @@
     <Folder Include="wwwroot\css\dist\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.9" />
-    <PackageReference Include="OpenGraph-Net" Version="4.0.1" />
-  </ItemGroup>
-
   <Target Name="Tailwind" BeforeTargets="Build">
     <Exec Command="npm run css:build" />
   </Target>
