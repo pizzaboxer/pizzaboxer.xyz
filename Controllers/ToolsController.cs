@@ -23,7 +23,7 @@ namespace PersonalWebsite.Controllers
         {
             const string cacheKey = "GoogleCloudRanges";
 
-            if (!_memoryCache.TryGetValue(cacheKey, out List<IPNetwork> ranges))
+            if (!_memoryCache.TryGetValue(cacheKey, out List<IPNetwork>? ranges))
             {
                 _logger.LogInformation("Cache miss, fetching Google Cloud IP list");
 
@@ -33,7 +33,7 @@ namespace PersonalWebsite.Controllers
                 if (response is null)
                     return StatusCode(500);
 
-                ranges = new();
+                ranges = [];
 
                 foreach (var range in response.Prefixes) 
                 {
@@ -47,6 +47,9 @@ namespace PersonalWebsite.Controllers
 
                 _memoryCache.Set(cacheKey, ranges, cacheOptions);
             }
+
+            if (ranges is null)
+                return StatusCode(500);
 
             foreach (var range in ranges)
             {

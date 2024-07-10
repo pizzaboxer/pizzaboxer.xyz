@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PUBLISHDIR=bin/Release/net6.0/linux-x64/publish
+PUBLISHDIR=bin/Release/net8.0/linux-x64/publish
 
 MACHINE=pizza-server.internal.pizzaboxer.xyz
 SERVICE=pizzaboxer.xyz.service
