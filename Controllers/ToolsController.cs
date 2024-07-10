@@ -16,11 +16,8 @@ namespace PersonalWebsite.Controllers
             _logger = logger;
             _memoryCache = memoryCache;
         }
-
-        public IActionResult ChatColor()
-        {
-            return View();
-        }
+        
+        public IActionResult ChatColor() => View();
 
         public async Task<IActionResult> Lol()
         {

@@ -4,9 +4,6 @@ namespace PersonalWebsite.Controllers
 {
 	public class StatusController : Controller
 	{
-        public IActionResult Http404()
-		{
-			return View();
-		}
+		public IActionResult Http404() => View();
 	}
 }
