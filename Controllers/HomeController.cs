@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace PersonalWebsite.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : ThemedController
     {
         public IActionResult Index() => View();
 

@@ -2,7 +2,7 @@
 
 namespace PersonalWebsite.Controllers
 {
-	public class StatusController : Controller
+	public class StatusController : ThemedController
 	{
 		public IActionResult Http404() => View();
 	}

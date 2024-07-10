@@ -6,7 +6,7 @@ using System.Net;
 
 namespace PersonalWebsite.Controllers
 {
-    public class ToolsController : Controller
+    public class ToolsController : ThemedController
     {
         private readonly ILogger<ToolsController> _logger;
         private readonly IMemoryCache _memoryCache;

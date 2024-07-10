@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="~/css/dist/site.css" asp-append-version="true" />
 </head>
 <body class="bg-neutral-900 text-white font-body">
-	<div id="bg_image" class="fixed -z-10 w-full h-screen bg-cover bg-center bg-no-repeat bg-hidden">
+    <div id="bg_image" class="fixed -z-10 w-full h-screen bg-cover bg-center bg-no-repeat @((bool)ViewData["LoadBackground"] ? "bg-hidden" : "")">
 		<!-- used for preloading -->
 		<img src="/img/back.png" width="0">
 	</div>
