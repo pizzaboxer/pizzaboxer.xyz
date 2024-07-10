@@ -2,7 +2,8 @@
 module.exports = {
     content: ["./Views/**/*.cshtml"],
     theme: {
-        extend: {},
-    },
-    plugins: [],
+        fontFamily: {
+            'body': ['ui-serif', '"Times New Roman"', 'Times', 'serif']
+        }
+    }
 }
