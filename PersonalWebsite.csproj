@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\css\dist\" />
-    <Folder Include="wwwroot\js\dist\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,11 +19,6 @@
 
   <Target Name="Tailwind" BeforeTargets="Build">
     <Exec Command="npm run css:build" />
-  </Target>
-
-  <Target Name="Webpack" BeforeTargets="Build">
-    <Exec Command="npm run js:build:debug" Condition="'$(Configuration)' == 'Debug'" />
-    <Exec Command="npm run js:build:release" Condition="'$(Configuration)' == 'Release'" />
   </Target>
 
 </Project>

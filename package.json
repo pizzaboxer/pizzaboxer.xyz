@@ -5,9 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "css:build": "npx tailwindcss -i ./wwwroot/css/src/site.css -o ./wwwroot/css/dist/site.css",
-    "js:build:debug": "npx webpack --config webpack.config.js --mode=development",
-    "js:build:release": "npx webpack --config webpack.config.js --mode=production"
+    "css:build": "npx tailwindcss -i ./wwwroot/css/src/site.css -o ./wwwroot/css/dist/site.css --minify"
   },
   "keywords": [],
   "author": "",
